@@ -1,0 +1,21 @@
+---
+- name: "Install {{ php_vers }} on Debian"
+  apt: name={{ php_vers }}{{ item }} update_cache=yes state=latest
+  with_items:
+    - ""
+    - "-cli" 
+    - "-fpm" 
+    - "-json" 
+    - "-pdo" 
+    - "-mysql" 
+    - "-zip" 
+    - "-gd"  
+    - "-mbstring" 
+    - "-curl" 
+    - "-xml" 
+    - "-bcmath" 
+    - "-json"
+  notify: restart nginx
+
+- name: Start {{ php_vers }}-fpm on Debian
+  service: name={{ php_vers}}-fpm state=started enabled=yes

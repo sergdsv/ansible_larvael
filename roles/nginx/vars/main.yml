@@ -1,0 +1,8 @@
+---
+# vars file for nginx
+
+http_host: "test.local"
+http_conf: "test_local.conf"
+http_port: "80"
+
+php_vers: "php7.2"

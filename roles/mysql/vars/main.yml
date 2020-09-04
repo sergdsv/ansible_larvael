@@ -1,0 +1,11 @@
+---
+# vars file for mysql
+
+hostname: "test.local"
+user: "test_local"
+password: "password"
+database: "test_local"
+
+mysql_port: 3306 
+mysql_bind_address: "127.0.0.1"
+mysql_root_pass: "rootpassword"

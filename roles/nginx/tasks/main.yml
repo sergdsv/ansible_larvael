@@ -1,0 +1,12 @@
+---
+# tasks file for nginx
+
+- import_tasks: nginx_debian.yml
+  when: ansible_os_family == "Debian"
+
+- import_tasks: "php_debian.yml"
+  when: ansible_os_family == "Debian"
+
+- import_tasks: "nginx_debian_configure.yml"
+  when: ansible_os_family == "Debian"
+  

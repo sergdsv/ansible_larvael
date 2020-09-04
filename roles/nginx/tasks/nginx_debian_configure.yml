@@ -1,0 +1,16 @@
+- name: Copy {{ http_host }} file to /etc/nginx/sites-available virtualhost
+  template:
+    src=virtualhost.j2
+    dest=/etc/nginx/sites-available/{{ http_host }}
+    owner=root
+    group=root
+    mode=0644
+  
+- name: Create a symbolic link {{ http_host }}
+  file:
+    src: /etc/nginx/sites-available/{{ http_host }}
+    dest: /etc/nginx/sites-enabled/{{ http_host }}
+    owner: root
+    group: root
+    state: link
+  notify: restart nginx

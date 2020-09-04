@@ -1,0 +1,6 @@
+---
+- name: Install Nginx on Debian
+  apt: name=nginx state=latest
+
+- name: Start Nginx on Debian
+  service: name=nginx state=started enabled=yes

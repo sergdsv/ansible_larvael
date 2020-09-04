@@ -1,0 +1,6 @@
+---
+# tasks file for mysql
+
+- import_tasks: mysql_debian.yml
+  when: ansible_os_family == "Debian"
+  
